@@ -1,0 +1,38 @@
+\chapter{Groups}
+\section{Definitions and examples}
+
+\subsection{Definition of a Group}
+A \textbf{group} is a set $G$, equipped with a binary operation $*$, which satisfies the following four axioms:
+
+\begin{enumerate}
+  \item \textbf{Closure:} For all $a, b \in G$, the result of the operation $a * b$ is also in $G$.
+  \item \textbf{Associativity:} For all $a, b, c \in G$, the equation $(a * b) * c = a * (b * c)$ holds.
+  \item \textbf{Identity:} There exists an element $e \in G$ such that for every $a \in G$, the equations $e * a = a$ and $a * e = a$ hold.
+  \item \textbf{Inverses:} For each element $a \in G$, there exists an element $a^{-1} \in G$ such that $a * a^{-1} = e$ and $a^{-1} * a = e$.
+\end{enumerate}
+
+\subsection{Examples of Groups}
+Here, we present some basic examples of groups:
+
+\begin{example}
+  The set of integers $\mathbb{Z}$ with the operation of addition is a group. The identity element is 0, and the inverse of any integer $a$ is $-a$.
+\end{example}
+
+\begin{example}
+  The set of non-zero rational numbers $\mathbb{Q}^*$ with the operation of multiplication is a group. The identity element is 1, and the inverse of any rational number $a$ is $\frac{1}{a}$.
+\end{example}
+
+\begin{example}
+  The symmetric group $S_n$ consists of all possible permutations of $n$ distinct objects. The binary operation is the composition of permutations. The identity element is the identity permutation, and the inverse of a permutation is its inverse permutation.
+\end{example}
+
+\begin{example}
+  The set of $n \times n$ invertible matrices with real entries, denoted by $GL_n(\mathbb{R})$, forms a group under matrix multiplication. The identity element is the $n \times n$ identity matrix, and the inverse of a matrix is its inverse matrix.
+\end{example}
+
+\begin{example}
+  The cyclic group of order $n$, denoted by $C_n$, consists of the elements $\{e, a, a^2, \dots, a^{n-1}\}$, where $a^n = e$. The binary operation is the multiplication modulo $n$. The identity element is $e$, and the inverse of an element $a^k$ is $a^{n-k}$.
+\end{example}
+
+These are just a few examples of groups; many more can be found throughout mathematics.
+
