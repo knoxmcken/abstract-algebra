@@ -1,0 +1,18 @@
+# LaTeX files
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+
+# Compiled output
+*.pdf
+
+# Other files to ignore
+.DS_Store
+Thumbs.db
+
