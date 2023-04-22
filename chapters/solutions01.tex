@@ -1,0 +1,90 @@
+
+\section*{Solutions to Intermediate Problems}
+
+\begin{enumerate}
+\item
+To show that $R$ is an equivalence relation on $A \times B$, we need to prove that it is reflexive, symmetric, and transitive.
+
+\begin{itemize}
+\item \textbf{Reflexive}: For all $(a, b) \in A \times B$, we have $(a, b)R(a, b)$ since $b = b$.
+\item \textbf{Symmetric}: For all $(a_1, b_1), (a_2, b_2) \in A \times B$, if $(a_1, b_1)R(a_2, b_2)$, then $b_1 = b_2$. By symmetry, $b_2 = b_1$, so $(a_2, b_2)R(a_1, b_1)$.
+\item \textbf{Transitive}: For all $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in A \times B$, if $(a_1, b_1)R(a_2, b_2)$ and $(a_2, b_2)R(a_3, b_3)$, then $b_1 = b_2$ and $b_2 = b_3$. Therefore, $b_1 = b_3$, and $(a_1, b_1)R(a_3, b_3)$.
+\end{itemize}
+
+Thus, $R$ is an equivalence relation on $A \times B$. The equivalence classes are $\{(a, 1) \mid a \in A\}$ and $\{(a, 2) \mid a \in A\}$.
+
+\item
+To show that $R$ is an equivalence relation on $A$, we need to prove that it is reflexive, symmetric, and transitive.
+
+\begin{itemize}
+\item \textbf{Reflexive}: For all $a \in A$, we have $a^3 \equiv a^3 \pmod{7}$, so $aRa$.
+\item \textbf{Symmetric}: For all $a, b \in A$, if $aRb$, then $a^3 \equiv b^3 \pmod{7}$. By symmetry, $b^3 \equiv a^3 \pmod{7}$, so $bRa$.
+\item \textbf{Transitive}: For all $a, b, c \in A$, if $aRb$ and $bRc$, then $a^3 \equiv b^3 \pmod{7}$ and $b^3 \equiv c^3 \pmod{7}$. By transitivity, $a^3 \equiv c^3 \pmod{7}$, so $aRc$.
+\end{itemize}
+
+Thus, $R$ is an equivalence relation on $A$. The equivalence classes of $R$ are the sets of integers whose cubes have the same remainder when divided by 7, which are:
+
+\begin{align*}
+[0] &= \{\dots, -14, -7, 0, 7, 14, \dots\}, \\
+[1] &= \{\dots, -13, -6, 1, 8, 15, \dots\}, \\
+[2] &= \{\dots, -12, -5, 2, 9, 16, \dots\}, \\
+[3] &= \{\dots, -11, -4, 3, 10, 17, \dots\}, \\
+[4] &= \{\dots, -10, -3, 4, 11, 18, \dots\}, \\
+[5] &= \{\dots, -9, -2, 5, 12, 19, \dots\}, \\
+[6] &= \{\dots, -8, -1, 6, 13, 20, \dots\}.
+\end{align*}
+
+\item
+To show that $R$ is an equivalence relation on $A$, we need to prove that it is reflexive, symmetric, and transitive.
+
+\begin{itemize}
+\item \textbf{Reflexive}: For all $a \in A$, we have $a \equiv a \pmod{2}$, so $aRa$.
+\item \textbf{Symmetric}: For all $a, b \in A$, if $aRb$, then $a \equiv b \pmod{2}$. By symmetry, $b \equiv a \pmod{2}$, so $bRa$.
+\item \textbf{Transitive}: For all $a, b, c \in A$, if $aRb$ and $bRc$, then $a \equiv b \pmod{2}$ and $b \equiv c \pmod{2}$. By transitivity, $a \equiv c \pmod{2}$, so $aRc$.
+\end{itemize}
+
+Thus, $R$ is an equivalence relation on $A$. The equivalence classes are:
+
+\begin{align*}
+[0] &= \{0, 2, 4\}, \\
+[1] &= \{1, 3\}.
+\end{align*}
+
+These equivalence classes form a partition of $A$ as they are nonempty, disjoint, and their union is equal to $A$.
+
+\item
+To show that $R$ is an equivalence relation on $\mathbb{Q}$, we need to prove that it is reflexive, symmetric, and transitive.
+
+\begin{itemize}
+\item \textbf{Reflexive}: For all $a \in \mathbb{Q}$, we have $a - a = 0 \in \mathbb{Z}$, so $aRa$.
+\item \textbf{Symmetric}: For all $a, b \in \mathbb{Q}$, if $aRb$, then $a - b \in \mathbb{Z}$. By symmetry, $b - a \in \mathbb{Z}$, so $bRa$.
+\item \textbf{Transitive}: For all $a, b, c \in \mathbb{Q}$, if $aRb$ and $bRc$, then $a - b \in \mathbb{Z}$ and $b - c \in \mathbb{Z}$. Therefore, $(a - b) + (b - c) = a - c \in \mathbb{Z}$, so $aRc$.
+\end{itemize}
+
+Thus, $R$ is an equivalence relation on $\mathbb{Q}$. The equivalence classes are:
+
+$$
+[q] = \{q + n \mid n \in \mathbb{Z}\}, \quad \text{for}\ q \in \mathbb{Q}.
+$$
+
+
+
+Each equivalence class $[q]$ contains all rational numbers that differ by an integer from $q$. These equivalence classes partition the set of rational numbers.
+
+\item
+To show that $R$ is an equivalence relation on $S$, we need to prove that it is reflexive, symmetric, and transitive.
+
+\begin{itemize}
+\item \textbf{Reflexive}: For all $(a, b) \in S$, we have $a + b = a + b$, so $(a, b)R(a, b)$.
+\item \textbf{Symmetric}: For all $(a_1, b_1), (a_2, b_2) \in S$, if $(a_1, b_1)R(a_2, b_2)$, then $a_1 + b_1 = a_2 + b_2$. By symmetry, $a_2 + b_2 = a_1 + b_1$, so $(a_2, b_2)R(a_1, b_1)$.
+\item \textbf{Transitive}: For all $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in S$, if $(a_1, b_1)R(a_2, b_2)$ and $(a_2, b_2)R(a_3, b_3)$, then $a_1 + b_1 = a_2 + b_2$ and $a_2 + b_2 = a_3 + b_3$. Therefore, $a_1 + b_1 = a_3 + b_3$, and $(a_1, b_1)R(a_3, b_3)$.
+\end{itemize}
+
+Thus, $R$ is an equivalence relation on $S$. The equivalence classes are sets of ordered pairs whose sum is constant:
+
+$$
+[n] = \{(a, b) \mid a, b \in \mathbb{Z}^+, a \leq b, a + b = n\}, \quad \text{for}\ n \in \mathbb{Z}^+.
+$$
+
+Each equivalence class $[n]$ contains all ordered pairs $(a, b)$ of positive integers such that $a \leq b$ and their sum is equal to $n$.
+\end{enumerate}
