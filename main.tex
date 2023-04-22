@@ -1,37 +1,94 @@
+\documentclass{report}
+
+% Include necessary LaTeX packages for math
+\usepackage{amsmath} % for advanced math symbols and environments
+\usepackage{amsfonts} % for additional math fonts
+\usepackage{amssymb} % for additional math symbols
+\usepackage{mathtools} % for additional math tools and symbols
+\usepackage{bm} % for bold math symbols
+\usepackage{mathrsfs} % for additional math fonts
+
+% Set up document formatting (optional)
+\usepackage{geometry} % for adjusting page margins and size
+\usepackage{setspace} % for adjusting line spacing
+%\usepackage{enumitem} % for customizing lists
+
+
+
+\newtheorem{definition}{\textcolor{blue}{Definition}}
+\newtheorem{theorem}{THEOREM}[chapter]
+\newtheorem{example}{\textit{Example}}
+\newtheorem{fact}{Fact}[chapter]
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{axiom}{AXIOM}[chapter]
+
+\newtheorem{problem}{Problem}[chapter]
+\newtheorem{solution}{Solution}[chapter]
+
+\begin{document}
+
 
 Topics to be covered:
 
-1.  Introduction to Abstract Algebra and Set Theory (1 week)
-    
-    *   Basic set operations, relations, and functions
-    *   Cartesian products and equivalence relations
-2.  Groups (3 weeks)
-    
-    *   Definition and examples
-    *   Subgroups, cyclic groups, and permutation groups
-    *   Cosets, normal subgroups, and factor groups
-3.  Group Homomorphisms and Isomorphism Theorems (1.5 weeks)
-    
-    *   Group homomorphisms, kernels, and images
-    *   First, Second, and Third Isomorphism Theorems
-4.  Rings (2.5 weeks)
-    
-    *   Definition and examples
-    *   Subrings, ideals, and quotient rings
-    *   Ring homomorphisms and isomorphisms
-5.  Fields and Field Extensions (2 weeks)
-    
-    *   Definition and examples
-    *   Algebraic and transcendental extensions
-    *   Finite fields and the Frobenius automorphism
-6.  Introduction to Galois Theory (2 weeks)
-    
-    *   Fundamental theorem of Galois theory
-    *   Solvability by radicals and the unsolvability of the quintic
-    *   Applications to classical geometric constructions
-7.  Module Theory (1 week)
-    
-    *   Definition and examples
-    *   Submodules, quotient modules, and direct sums
-    *   Module homomorphisms and isomorphisms
+\begin{enumerate}
 
+\item  Introduction to Abstract Algebra and Set Theory (1 week)
+    
+       Basic set operations, relations, and functions
+
+       Cartesian products and equivalence relations
+
+\item   Groups (3 weeks)
+    
+       Definition and examples
+
+       Subgroups, cyclic groups, and permutation groups
+
+       Cosets, normal subgroups, and factor groups
+
+\item   Group Homomorphisms and Isomorphism Theorems (1.5 weeks)
+    
+       Group homomorphisms, kernels, and images
+
+       First, Second, and Third Isomorphism Theorems
+
+\item   Rings (2.5 weeks)
+    
+       Definition and examples
+
+       Subrings, ideals, and quotient rings
+
+       Ring homomorphisms and isomorphisms
+
+
+\item  Fields and Field Extensions (2 weeks)
+    
+       Definition and examples
+
+       Algebraic and transcendental extensions
+
+       Finite fields and the Frobenius automorphism
+
+\item  Introduction to Galois Theory (2 weeks)
+    
+       Fundamental theorem of Galois theory
+
+       Solvability by radicals and the unsolvability of the quintic
+
+       Applications to classical geometric constructions
+
+\item  Module Theory (1 week)
+    
+       Definition and examples
+
+       Submodules, quotient modules, and direct sums
+
+       Module homomorphisms and isomorphisms
+
+\end{enumerate}
+
+\input{./chapters/chapter01.tex}
+
+\end{document}
