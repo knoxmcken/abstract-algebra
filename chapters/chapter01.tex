@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{report}
 
 % Include necessary LaTeX packages for math
 \usepackage{amsmath} % for advanced math symbols and environments
@@ -11,13 +11,24 @@
 % Set up document formatting (optional)
 \usepackage{geometry} % for adjusting page margins and size
 \usepackage{setspace} % for adjusting line spacing
-\usepackage{enumitem} % for customizing lists
+%\usepackage{enumitem} % for customizing lists
 
 
 
+\newtheorem{definition}{\textcolor{blue}{Definition}}
+\newtheorem{theorem}{THEOREM}[chapter]
+\newtheorem{example}{\textit{Example}}
+\newtheorem{fact}{Fact}[chapter]
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{axiom}{AXIOM}[chapter]
+
+\newtheorem{problem}{Problem}[chapter]
+\newtheorem{solution}{Solution}[chapter]
 
 
-
+\begin{document}
 
 \chapter{Introduction to Abstract Algebra and Set Theory}
 
@@ -31,9 +42,11 @@ A \textit{set} is a collection of distinct objects, called \textit{elements} or 
 
 There are several basic operations on sets that we will use throughout this course:
 
-\begin{itemize} \item \textbf{Union:} The union of two sets $A$ and $B$, denoted $A \cup B$, is the set containing all elements that are in either $A$ or $B$ or both. In other words, A \cup B\={x:x \in A { or } x \in B}.A \cup B = \{x : x \in A \text{ or } x \in B\}.A \cup B\={x:x \in A \text{ or } x \in B}.
+\begin{itemize} 
 
-    \item \textbf{Intersection:} The intersection of two sets $A$ and $B$, denoted $A \cap B$, is the set containing all elements that are in both $A$ and $B$. In other words, $A \cap B = \{x:x \in A \text{ and }x \in B\}$.
+\item \textbf{Union:} The union of two sets $A$ and $B$, denoted $A \cup B$, is the set containing all elements that are in either $A$ or $B$ or both. In other words, $A \cup B = \{x:x \in A \text{ or } x \in B\}$. 
+
+    \item \textbf{Intersection:} The intersection of two sets $A$ and $B$, denoted $A \cap B$, is the set containing all elements that are in both $A$ and $B$. In other words, $A \cap B = \{x:x \in A \text{ and } x \in B\}$.
 
     \item \textbf{Difference:} The difference of two sets $A$ and $B$, denoted $A \setminus B$, is the set containing all elements that are in $A$ but not in $B$. In other words, $A \setminus B = {x:x \in A \text{ and } x \notin B}$. 
 
@@ -79,12 +92,17 @@ Some common types of relations are:
 
 A \textit{function} is a special kind of relation between two sets $A$ and $B$. A function $f$ from a set $A$ to a set $B$, denoted $f : A \to B$, is a rule that assigns to each element $a \in A$ a unique element $b \in B$. We write $f(a) = b$ to indicate that the function $f$ maps the element $a$ to the element $b$. The set $A$ is called the \textit{domain} of the function, and the set $B$ is called the \textit{codomain}. The \textit{range} of the function is the set of all elements in $B$ that are the images of elements in $A$. In other words, the range of $f$ is the set ${f(a) : a \in A}$.
 
-A function $f : A \to B$ is called an \textit{injection} or \textit{one-to-one} if every element in $A$ is mapped to a distinct element in $B$. In other words, if $f(a_1) = f(a_2)$, then $a_1 = a_2$.
+A function can be can be categorised based on its properties:
 
-A function $f : A \to B$ is called a \textit{surjection} (or \textit{onto}) if every element in $B$ is the image of at least one element in $A$. In other words, for every $b \in B$, there exists an $a \in A$ such that $f(a) = b$.
+\begin{itemize}
+    \item A function $f : A \to B$ is called an \textit{injection} or \textit{one-to-one} if every element in $A$ is mapped to a distinct element in $B$. In other words, if $f(a_1) = f(a_2)$, then $a_1 = a_2$.
 
-A function $f : A \to B$ is called a \textit{bijection} or has a \textit{one-to-one correspondence} if it is both an injection and a surjection. In other words, $f$ is a bijection if every element in $A$ is mapped to a distinct element in $B$, and every element in $B$ is the image of at least one element in $A$. Bijections are important because they establish a strong correspondence between the elements of $A$ and $B$, indicating that the two sets have the same size or cardinality.
+    \item A function $f : A \to B$ is called a \textit{surjection} (or \textit{onto}) if every element in $B$ is the image of at least one element in $A$. In other words, for every $b \in B$, there exists an $a \in A$ such that $f(a) = b$.
+
+    \item A function $f : A \to B$ is called a \textit{bijection} or has a \textit{one-to-one correspondence} if it is both an injection and a surjection. In other words, $f$ is a bijection if every element in $A$ is mapped to a distinct element in $B$, and every element in $B$ is the image of at least one element in $A$. Bijections are important because they establish a strong correspondence between the elements of $A$ and $B$, indicating that the two sets have the same size or cardinality.
 % check this definition...
+
+\end{itemize}
 
 \subsection{Composition of Functions}
 
@@ -116,10 +134,13 @@ A \times B = \{(a, b) \mid a \in A, b \in B\}.
 \]
 
 \begin{example}
+
 Let $A = \{1, 2\}$ and $B = \{a, b\}$. The Cartesian product $A \times B$ is
+
 \[
 A \times B = \{(1, a), (1, b), (2, a), (2, b)\}.
 \]
+
 \end{example}
 
 The Cartesian product can be generalized to more than two sets. Given $n$ sets, the Cartesian product is the set of all ordered $n$-tuples.
@@ -136,23 +157,30 @@ A relation $R$ on a set $A$ is a subset of $A \times A$. If $(a, b) \in R$, we w
 \subsection{Equivalence Relations}
 An equivalence relation is a relation that is reflexive, symmetric, and transitive. If a relation $\sim$ is an equivalence relation on a set $A$, then we can partition $A$ into disjoint subsets called equivalence classes.
 
-\begin{definition}
+%\begin{definition}
+Definition:
+
 Given an equivalence relation $\sim$ on a set $A$, the equivalence class of an element $a \in A$ is the set of all elements in $A$ that are related to $a$. It is denoted by $[a]$:
 
 \[
 [a] = \{x \in A \mid x \sim a\}.
 \]
 
-\end{definition}
+%\end{definition}
 
 \begin{theorem}
 If $\sim$ is an equivalence relation on a set $A$, then the equivalence classes partition $A$ into disjoint subsets.
 \end{theorem}
 
-\begin{proof}
+%\begin{proof}
+
+Proof:
+
 Let $A$ be a set with an equivalence relation $\sim$, and let $a, b \in A$. There are two cases to consider for the intersection of the equivalence classes $[a]$ and $[b]$:
 
+
 \begin{enumerate}
+
 \item If $a \sim b$, then for any $x \in [a]$, we have $x \sim a \sim b$. Since $\sim$ is symmetric, $b \sim a$, and by transitivity, $x \sim b$. Therefore, $x \in [b]$, and $[a] \subseteq [b]$. Similarly, we can show that $[b] \subseteq [a]$, and thus, $[a] = [b]$.
 
 \item If $a \not\sim b$, then $[a] \cap [b] = \emptyset$. Suppose there exists an element $x \in [a] \cap [b]$. Then $x \sim a$ and $x \sim b$. By symmetry, $b \sim x$, and by transitivity, $a \sim b$. This contradicts our assumption that $a \not \sim b$. Therefore, the intersection must be empty.
@@ -160,10 +188,11 @@ Let $A$ be a set with an equivalence relation $\sim$, and let $a, b \in A$. Ther
 \end{enumerate}
 
 In both cases, the equivalence classes are either equal or disjoint, which implies that the equivalence classes partition $A$.
-\end{proof}
+%\end{proof}
 
 \begin{example}
 Let $A = \mathbb{Z}$, and define an equivalence relation $\sim$ on $\mathbb{Z}$ such that $a \sim b$ if and only if $a \equiv b \pmod{3}$. The equivalence classes are:
+
 \begin{align*}
 [0] &= \{\dots, -6, -3, 0, 3, 6, \dots\}, \\
 [1] &= \{\dots, -5, -2, 1, 4, 7, \dots\}, \\
