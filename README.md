@@ -1,6 +1,6 @@
-# Abstract Algebra Handbook
+# Abstract Algebra Course Guide
 
-This repository contains the source code for the book titled "Your Book Title". The book is written in LaTex and maintained in this GitHub repository.
+This repository contains the source code for the book titled *Abstract Algebra Course Guide*. The book is written in LaTex and maintained in this GitHub repository.
 
 ## Folder Structure
 
