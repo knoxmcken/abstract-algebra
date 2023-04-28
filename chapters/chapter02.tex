@@ -114,5 +114,37 @@ Definition:
 In this section, we have introduced the concepts of subgroups, cyclic groups, permutation groups, and alternating groups. These are fundamental building blocks for more advanced topics in group theory.
 
 
+\section{Cosets, normal subgroups, and factor groups}
+
+\subsection{Cosets}
+\begin{definition}
+  Let $G$ be a group, and let $H$ be a subgroup of $G$. A \textbf{left coset} of $H$ in $G$ is a set of the form $gH = \{gh : h \in H\}$, where $g \in G$. Similarly, a \textbf{right coset} of $H$ in $G$ is a set of the form $Hg = \{hg : h \in H\}$.
+\end{definition}
+
+\begin{example}
+  In the group of integers $\mathbb{Z}$ under addition, consider the subgroup $H = 3\mathbb{Z}$ of multiples of 3. The left cosets of $H$ are $0 + H = H, 1 + H, 2 + H$, and the right cosets are $H + 0 = H, H + 1, H + 2$.
+\end{example}
+
+\subsection{Normal subgroups}
+\begin{definition}
+  A subgroup $N$ of a group $G$ is called a \textbf{normal subgroup} if the left and right cosets coincide for every element of $G$, i.e., $gN = Ng$ for all $g \in G$.
+\end{definition}
+
+\begin{example}
+  In the group of integers $\mathbb{Z}$ under addition, all subgroups are normal subgroups because the operation is commutative.
+\end{example}
+
+\begin{example}
+  In a group $G$, the trivial subgroup $\{e\}$ and the entire group $G$ are always normal subgroups.
+\end{example}
+
+\subsection{Factor groups}
+\begin{definition}
+  If $N$ is a normal subgroup of a group $G$, we can define a new group called the \textbf{factor group} or \textbf{quotient group} of $G$ by $N$, denoted by $G/N$. The elements of $G/N$ are the cosets of $N$ in $G$, and the group operation is defined as follows: $(g_1N)(g_2N) = (g_1g_2)N$ for any $g_1, g_2 \in G$.
+\end{definition}
+
+\begin{example}
+  In the group of integers $\mathbb{Z}$ under addition, consider the subgroup $H = 3\mathbb{Z}$ of multiples of 3. The factor group $\mathbb{Z}/H$ consists of the cosets $0 + H, 1 + H, 2 + H$, and the operation is addition modulo 3.
+\end{example}
 
 
