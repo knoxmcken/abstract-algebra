@@ -1,0 +1,86 @@
+\section{Solutions to Exercises}
+
+\begin{enumerate}
+  \item \textbf{Subgroup Test:} Let $G$ be a group and $H$ be a non-empty subset of $G$. We will show that $H$ is a subgroup of $G$ if and only if for all $a, b \in H$, the element $ab^{-1}$ is also in $H$.
+  
+  ($\Rightarrow$) Since $H$ is a subgroup of $G$, it is closed under the group operation and taking inverses. For any $a, b \in H$, we have $b^{-1} \in H$, so $ab^{-1} \in H$.
+
+  ($\Leftarrow$) We will prove that $H$ is a subgroup of $G$ by showing that it satisfies the subgroup criteria:
+  \begin{enumerate}
+    \item Since $H$ is non-empty, there exists an element $a \in H$. Then, $aa^{-1} = e \in H$.
+    \item For $a, b \in H$, we have $ab^{-1} \in H$. Then, $ab^{-1}(b^{-1})^{-1} = a(bb^{-1}) = ab \in H$, so $H$ is closed under the group operation.
+    \item For $a \in H$, we have $ea^{-1} \in H$. Then, $a^{-1} = (ea^{-1})^{-1} \in H$, so $H$ is closed under taking inverses.
+  \end{enumerate}
+  Therefore, $H$ is a subgroup of $G$.
+
+  \item \textbf{Cyclic Group Properties:}
+  \begin{enumerate}
+    \item Let $G = \langle a \rangle$ be a cyclic group of order $n$, and let $m$ be a positive integer. We want to show that the order of $a^m$ is $\frac{n}{\text{gcd}(m, n)}$. Let $d = \text{gcd}(m, n)$. Note that $\text{lcm}(m, n) = \frac{mn}{d}$.
+
+    Since $a^n = e$, we have $(a^m)^n = a^{mn} = e$. Thus, the order of $a^m$ divides $n$. Let $k$ be the order of $a^m$. Then, $(a^m)^k = e$, so $a^{mk} = e$. This implies that $n$ divides $mk$, so $\text{lcm}(m, n)$ divides $mk$. Therefore, $\frac{mn}{d}$ divides $mk$, and $k$ divides $\frac{n}{d}$. Since $k$ also divides $n$, we conclude that $k = \frac{n}{d}$.
+
+    \item Let $G = \langle a \rangle$ be a cyclic group of order $n$. We want to show that for each divisor $d$ of $n$, there is exactly one subgroup of order $d$.
+
+    Let $H = \langle a^{n/d} \rangle$. Since the order of $a^{n/d}$ is $d$, the order of $H$ is also $d$. Thus, there exists at least one subgroup of order $d$.
+
+    Suppose there is another subgroup $K$ of order $d$. Then, there exists an element $a^k \in K$ of order $d$. Since $(a^k)^d = a^{kd} = e$, we have $n$ divides $kd$. However, since the order of $a^k$ is $d$, we know that $d$ divides $k$. Let $k = d \cdot r$, where $r$ is a positive integer. Then, $n$ divides $d^2 r$, which implies that $\frac{n}{d}$ divides $d \cdot r$. Since $\frac{n}{d}$ and $d$ are relatively prime, $\frac{n}{d}$ must divide $r$. Thus, $r = \frac{n}{d} \cdot s$ for some positive integer $s$. Then, $k = d \cdot \frac{n}{d} \cdot s = n \cdot s$, so $a^k = a^{n \cdot s} = (a^n)^s = e^s = e$. Therefore, $a^k$ is in the subgroup $H$, which means that $K$ is a subgroup of $H$.
+
+    
+    Since $H$ and $K$ both have order $d$, it follows that $H = K$. Thus, there is exactly one subgroup of order $d$ for each divisor $d$ of $n$.
+  \end{enumerate}
+
+  \item \textbf{Permutations:}
+  \begin{enumerate}
+    \item The permutation $(1\ 2\ 3\ 4)$ can be written as a product of disjoint cycles as $(1\ 2\ 3\ 4)$ since it is already a single cycle.
+    
+    \item To find the inverse of the permutation $(1\ 3)(2\ 4)$, we can reverse the order of the elements in each cycle: $(1\ 3)^{-1} = (3\ 1)$ and $(2\ 4)^{-1} = (4\ 2)$. Thus, the inverse is $(1\ 3)^{-1}(2\ 4)^{-1} = (3\ 1)(4\ 2)$.
+    
+    \item First, we can write the permutation $(1\ 3\ 4)(2\ 4\ 3)$ as a product of disjoint cycles by multiplying the cycles: $(1\ 3\ 4)(2\ 4\ 3) = (1\ 4)(2\ 3)$. The order of a permutation is the least common multiple of the lengths of its disjoint cycles. In this case, the lengths are 2 and 2, so the order is $\text{lcm}(2, 2) = 2$.
+  \end{enumerate}
+
+  \item \textbf{Cosets:}
+  \begin{enumerate}
+    \item Let $g_1H$ and $g_2H$ be two left cosets of $H$ in $G$. If $g_1H \cap g_2H \neq \emptyset$, there exists $h_1, h_2 \in H$ such that $g_1h_1 = g_2h_2$. Then, $g_1^{-1}g_2 = h_1h_2^{-1} \in H$, so $g_2 = g_1h_1h_2^{-1}$. This implies that for any $h_2 \in H$, there exists $h_1 \in H$ such that $g_2h_2 = g_1h_1$, so $g_1H = g_2H$. Therefore, any two left cosets of $H$ in     $G$ are either disjoint or identical.
+
+    \item Let $gH$ be a left coset of $H$ in $G$. Define a function $f : H \to gH$ by $f(h) = gh$. We will show that $f$ is a bijection.
+
+    Injectivity: If $f(h_1) = f(h_2)$, then $gh_1 = gh_2$, and $h_1 = h_2$. Thus, $f$ is injective.
+
+    Surjectivity: For any $gh' \in gH$, we have $f(h') = gh'$, so $f$ is surjective.
+
+    Since $f$ is a bijection, $|H| = |gH|$.
+
+    \item Let $g_1, g_2 \in G$. We will show that $g_1H = g_2H$ if and only if $g_1^{-1}g_2 \in H$.
+
+    ($\Rightarrow$) If $g_1H = g_2H$, then $g_1 = g_2h$ for some $h \in H$. Thus, $g_1^{-1}g_2 = h$, so $g_1^{-1}g_2 \in H$.
+
+    ($\Leftarrow$) If $g_1^{-1}g_2 \in H$, then $g_1^{-1}g_2 = h$ for some $h \in H$. Thus, $g_1h = g_2$. This implies that for any $h' \in H$, there exists $h'' \in H$ such that $g_2h' = g_1h''$, so $g_1H = g_2H$.
+  \end{enumerate}
+
+  \item \textbf{Factor Group:}
+  \begin{enumerate}
+    \item Let $G$ be a group and $N$ be a normal subgroup of $G$. We will show that the factor group $G/N$ is a group under the operation $(g_1N)(g_2N) = (g_1g_2)N$.
+
+    Closure: For any $g_1N, g_2N \in G/N$, we have $(g_1g_2)N \in G/N$, so the operation is closed.
+
+    Associativity: For any $g_1N, g_2N, g_3N \in G/N$, we have $((g_1N)(g_2N))(g_3N) = (g_1g_2)N(g_3N) = (g_1g_2g_3)N = g_1N((g_2g_3)N) = (g_1N)(g_2N)(g_3N)$, so the operation is associative.
+
+    Identity: The identity element is $eN = N$. For any $gN \in G/N$, we have $(gN)(eN) = (gN)(N) = (gN) = (gN)(N) = (gN)(eN)$.
+
+    Inverses: For any $gN \in G/N$, the inverse is $(g^{-1})N$. We have $(gN)((g^{-1})N) = (gg^{-1})N = eN = N$ and $((g^{-1})N)(gN) = (g^{-1}g)N = eN = N$.
+
+    Thus, $G/N$ is a group under the operation $(g_1N)(g_2N) = (g_1g_2)N$.
+
+    \item Let $G = \mathbb{Z}$, and let $N = 2\mathbb{Z}$ be the subgroup of even integers. Since $N$ is a normal subgroup of $G$, the factor group $G/N$ is well-defined.
+
+    The elements of $G/N$ are of the form $nN$ and $(n+1)N$, where $n \in \mathbb{Z}$. We have $nN = \{2n + 2k : k \in \mathbb{Z}\}$ and $(n+1)N = \{2n + 2k + 2 : k \in \mathbb{Z}\}$.
+
+    The operation in $G/N$ is defined as $(nN)((n+1)N) = (n(n+1))N$. For example, let $n = 3$. Then, $(3N)(4N) = (3\cdot 4)N = 12N$.
+
+    The factor group $G/N$ is isomorphic to the group $\mathbb{Z}_2$ under addition modulo 2. The isomorphism $\phi : G/N \to \mathbb{Z}_2$ can be defined as $\phi(nN) = n \pmod 2$.
+  \end{enumerate}
+\end{enumerate}
+
+
+
+
