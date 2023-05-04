@@ -2,6 +2,10 @@
 
 This repository contains the source code for the book titled *Abstract Algebra Course Guide*. The book is written in LaTex and maintained in this GitHub repository.
 
+
+## Accessing the Draft Version of the Book
+The PDF compiled version of the mathematics textbook is available for readers to access via the following link: [draft](https://drive.google.com/file/d/1zNl6I3fQSuGTvfUzc_ESCSNKDieW9fUH/view?usp=share_link). This version represents a working draft of the book and its formatting is subject to change as the author continues to refine the content. The PDF contains all the current content of the book, allowing readers to review the material and provide feedback to the author. 
+
 ## Folder Structure
 
 The repository is organized into the following folders:
