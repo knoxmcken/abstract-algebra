@@ -1,0 +1,50 @@
+\section{Solutions}
+
+\begin{enumerate}
+  \item \textbf{Solution to Problem 1:}
+
+  To show that the number of left cosets of $H$ in $G$ is equal to the number of right cosets of $H$ in $G$, we will show that there is a bijection between the sets of left and right cosets.
+
+  Define a map $f: \{gH : g \in G\} \to \{Hg : g \in G\}$ by $f(gH) = Hg^{-1}$. We need to show that $f$ is a bijection.
+
+  \textit{Injectivity:} Assume $f(g_1H) = f(g_2H)$. Then, $Hg_1^{-1} = Hg_2^{-1}$, which implies $g_1^{-1}H = g_2^{-1}H$. Multiplying both sides by $g_1$ on the left, we get $H = g_1g_2^{-1}H$. This means $g_1g_2^{-1} \in H$, so $g_1H = g_2H$. Therefore, $f$ is injective.
+
+  \textit{Surjectivity:} Let $Hg$ be a right coset of $H$. Then, $f(g^{-1}H) = Hg^{-1}g = Hg$, which shows that $f$ is surjective.
+
+  Since $f$ is a bijection between the sets of left and right cosets, their numbers are equal.
+
+  \item \textbf{Solution to Problem 2:}
+    \begin{enumerate}
+      \item To determine if $H$ is a normal subgroup of $GL_2(\mathbb{R})$, we need to check if $gHg^{-1} = H$ for all $g \in GL_2(\mathbb{R})$. Let $h_1 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ and $h_2 = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}$. Since $g^{-1}h_1g = gh_1g^{-1} = gg^{-1} = h_1$ for any $g \in GL_2(\mathbb{R})$, $h_1$ is in $gHg^{-1}$. Now consider $g^{-1}h_2g = g^{-1}(-I)g = -(g^{-1}g) = -I = h_2$, so $h_2$ is also in $gHg^{-1}$. Thus, $gHg^{-1} = H$, and $H$ is a normal subgroup.
+
+      \item To determine if $H$ is a normal subgroup of $S_3$, we need to check if $gHg^{-1} = H$ for all $g \in S_3$. Let $g = (1\ 2)$. Then, $g^{-1} = g$. We have $gHg^{-1} = gHg = \{g(), g(1\ 2\ 3), g(1\ 3\ 2)\} = \{(1\ 2), (1\ 3), (2\ 3)\}$. Since $gHg^{-1} \neq H$, the subgroup $H$ is not a normal subgroup of $S_3$.
+    \end{enumerate}
+
+  \item \textbf{Solution to Problem 3:}
+
+  To prove that $H \cap K$ is a subgroup of $G$, we need to show that it satisfies the three conditions of a subgroup.
+
+  \begin{enumerate}
+    \item Since $e \in H$ and $e \in K$, we have $e \in H \cap K$.
+    \item Let $a, b \in H \cap K$. Then, $a, b \in H$, so $ab \in H$ because $H$ is a subgroup. Similarly, $a, b \in K$, so $ab \in K$. Therefore, $ab \in H \cap K$.
+    \item Let $a \in H \cap K$. Then, $a \in H$, so $a^{-1} \in H$. Similarly, $a \in K$, so $a^{-1} \in K$. Thus, $a^{-1} \in H \cap K$.
+  \end{enumerate}
+
+  Since $H \cap K$ satisfies all three conditions, it is a subgroup of $G$.
+
+  \item \textbf{Solution to Problem 4:}
+
+  First, we find the order of the permutation $\sigma$. The order of $\sigma$ is the least common multiple of the lengths of its disjoint cycles. In this case, both cycles have length 3, so the order of $\sigma$ is $\operatorname{lcm}(3, 3) = 3$.
+
+  To determine if $\sigma$ is an odd or even permutation, we can write it as a product of transpositions. One way to do this is as follows: $\sigma = (1\ 2\ 3)(2\ 3\ 4) = (1\ 3)(1\ 2)(2\ 4)(2\ 3)$. Since there are 4 transpositions, $\sigma$ is an even permutation.
+
+  \item \textbf{Solution to Problem 5:}
+
+  Suppose $G/N$ is a cyclic group. Then there exists an element $gN \in G/N$ such that $G/N = \langle gN \rangle$. We need to show that $G = \langle g, N \rangle$.
+
+  Let $x \in G$. Since $G/N = \langle gN \rangle$, there exists an integer $k$ such that $xN = (gN)^k = g^kN$. This means that $x \in g^kN$, so there exists an element $n \in N$ such that $x = g^k n$. Since $g^k \in \langle g \rangle$ and $n \in N$, we have $x \in \langle g, N \rangle$. Therefore, $G \subseteq \langle g, N \rangle$.
+
+  Since $\langle g, N \rangle \subseteq G$ by definition, we have $G = \langle g, N \rangle$.
+\end{enumerate}
+
+

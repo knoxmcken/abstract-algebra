@@ -1,31 +1,44 @@
 \documentclass{report}
 
-% Include necessary LaTeX packages for math
+% Necessary LaTeX packages for math
 \usepackage{amsmath} % for advanced math symbols and environments
 \usepackage{amsfonts} % for additional math fonts
-\usepackage{amssymb} % for additional math symbols
-\usepackage{mathtools} % for additional math tools and symbols
-\usepackage{bm} % for bold math symbols
-\usepackage{mathrsfs} % for additional math fonts
+\usepackage{amsthm}  % for for defining theorem-like environments
+%\usepackage{amssymb} % for additional math symbols
+%\usepackage{mathtools} % for additional math tools and symbols
+%\usepackage{bm} % for bold math symbols
+%\usepackage{mathrsfs} % for additional math fonts
 
-% Set up document formatting (optional)
+% Document formatting 
 \usepackage{geometry} % for adjusting page margins and size
-\usepackage{setspace} % for adjusting line spacing
+%\usepackage{setspace} % for adjusting line spacing
 %\usepackage{enumitem} % for customizing lists
 
+% Bibliography management
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{./bibliography.bib}
 
 
-\newtheorem{definition}{\textcolor{blue}{Definition}}
-\newtheorem{theorem}{THEOREM}[chapter]
-\newtheorem{example}{\textit{Example}}
-\newtheorem{fact}{Fact}[chapter]
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{conjecture}{Conjecture}
-\newtheorem{axiom}{AXIOM}[chapter]
+% Environment definitions
 
-\newtheorem{problem}{Problem}[chapter]
-\newtheorem{solution}{Solution}[chapter]
+
+\newtheorem{Definition}{Definition}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{Example}{{Example}}[section]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\newtheorem{axiom}{Axiom}[chapter]
+
+\newenvironment{example}
+  {\begin{Example}\normalfont}
+  {\end{Example}}
+
+
+\newenvironment{definition}
+  {\begin{Definition}\normalfont}
+  {\end{Definition}}
+
 
 \begin{document}
 
@@ -89,6 +102,32 @@ Topics to be covered:
 
 \end{enumerate}
 
+% chapter 1
 \input{./chapters/chapter01.tex}
+\input{./chapters/exercise01.tex}
+\input{./chapters/problems01.tex}
+\input{./chapters/answers01.tex}
+\input{./chapters/solutions01.tex}
+
+% chapter 2
+\input{./chapters/chapter02.tex}
+\input{./chapters/exercises02.tex}
+\input{./chapters/answers02.tex}
+\input{./chapters/problems02.tex}
+\input{./chapters/solutions02.tex}
+
+
+% bibliography
+\nocite{dummit_foote}
+
+\nocite{fraleigh}
+
+\nocite{gallian}
+
+\nocite{artin}
+
+\nocite{isaacs}
+
+\printbibliography
 
 \end{document}

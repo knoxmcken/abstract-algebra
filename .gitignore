@@ -1,3 +1,7 @@
+# Vim files
+*.swp
+
+
 # LaTeX files
 *.log
 *.aux
