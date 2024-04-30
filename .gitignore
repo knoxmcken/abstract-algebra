@@ -12,6 +12,7 @@
 *.blg
 *.fdb_latexmk
 *.fls
+*.run.xml
 
 # Compiled output
 *.pdf
