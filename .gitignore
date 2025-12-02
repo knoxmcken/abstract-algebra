@@ -1,23 +1,32 @@
-# Vim files
-*.swp
-
-
-# LaTeX files
-*.log
+# LaTeX build files
 *.aux
-*.out
+*.log
 *.toc
-*.synctex.gz
+*.out
 *.bbl
 *.blg
+*.bcf
+*.run.xml
 *.fdb_latexmk
 *.fls
-*.run.xml
+*.synctex.gz
 
-# Compiled output
-*.pdf
+# Build directory (except README)
+build/*
+!build/README.md
 
-# Other files to ignore
+# Generated PDF (optional - remove this line if you want to track PDFs)
+main.pdf
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
 .DS_Store
 Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
 

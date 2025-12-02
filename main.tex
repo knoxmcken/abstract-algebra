@@ -1,43 +1,9 @@
 \documentclass{report}
 
-% Necessary LaTeX packages for math
-\usepackage{amsmath} % for advanced math symbols and environments
-\usepackage{amsfonts} % for additional math fonts
-\usepackage{amsthm}  % for for defining theorem-like environments
-%\usepackage{amssymb} % for additional math symbols
-%\usepackage{mathtools} % for additional math tools and symbols
-%\usepackage{bm} % for bold math symbols
-%\usepackage{mathrsfs} % for additional math fonts
-
-% Document formatting 
-\usepackage{geometry} % for adjusting page margins and size
-%\usepackage{setspace} % for adjusting line spacing
-%\usepackage{enumitem} % for customizing lists
-
-% Bibliography management
-\usepackage[backend=biber,style=numeric]{biblatex}
-\addbibresource{./bibliography.bib}
-
-
-% Environment definitions
-
-
-\newtheorem{Definition}{Definition}[chapter]
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{Example}{{Example}}[section]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
-\newtheorem{axiom}{Axiom}[chapter]
-
-\newenvironment{example}
-  {\begin{Example}\normalfont}
-  {\end{Example}}
-
-
-\newenvironment{definition}
-  {\begin{Definition}\normalfont}
-  {\end{Definition}}
+% Include modular preamble files
+\input{src/preamble/packages}
+\input{src/preamble/environments}
+\input{src/preamble/macros}
 
 
 \begin{document}
@@ -103,18 +69,18 @@ Topics to be covered:
 \end{enumerate}
 
 % chapter 1
-\input{./chapters/chapter01.tex}
-\input{./chapters/exercise01.tex}
-\input{./chapters/problems01.tex}
-\input{./chapters/answers01.tex}
-\input{./chapters/solutions01.tex}
+\input{src/chapters/chapter01}
+\input{src/exercises/exercise01}
+\input{src/problems/problems01}
+\input{src/solutions/answers01}
+\input{src/solutions/solutions01}
 
 % chapter 2
-\input{./chapters/chapter02.tex}
-\input{./chapters/exercises02.tex}
-\input{./chapters/answers02.tex}
-\input{./chapters/problems02.tex}
-\input{./chapters/solutions02.tex}
+\input{src/chapters/chapter02}
+\input{src/exercises/exercises02}
+\input{src/solutions/answers02}
+\input{src/problems/problems02}
+\input{src/solutions/solutions02}
 
 
 % bibliography
