@@ -4,4 +4,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repo etiquette
 
-- When merging pull requests, default to a merge commit (`gh pr merge --merge`), not squash or rebase.
+- When merging pull requests, default to squash merge (`gh pr merge --squash`), not a merge commit or rebase.
