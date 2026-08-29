@@ -3,75 +3,92 @@
 
 \section{Basic Set Operations, Relations, and Functions}
 
-In this section, we will cover the basics of set theory, including set operations, relations, and functions. These concepts are fundamental to understanding abstract algebra.
+In this section, we will cover the basics of set theory, including set operations, relations, and functions. These concepts are fundamental to understanding abstract algebra: subgroups are subsets closed under an operation, and quotient groups are built directly from the equivalence classes and partitions introduced later in this chapter.
 
 \subsection{Set Operations}
 
 A \textit{set} is a collection of distinct objects, called \textit{elements} or \textit{members}. We usually denote sets using capital letters, like $A$, $B$, and $C$. If an element $x$ belongs to a set $A$, we write $x \in A$. If $x$ does not belong to $A$, we write $x \notin A$.
 
+If every element of a set $A$ is also an element of a set $B$, we say $A$ is a \textit{subset} of $B$ and write $A \subseteq B$. If, in addition, $A \neq B$, we say $A$ is a \textit{proper subset} of $B$ and write $A \subsetneq B$. Subset containment will reappear throughout this course, for instance when asking whether a subset of a group is itself a subgroup.
+
 There are several basic operations on sets that we will use throughout this course:
 
-\begin{itemize} 
+\begin{itemize}
 
-\item \textbf{Union:} The union of two sets $A$ and $B$, denoted $A \cup B$, is the set containing all elements that are in either $A$ or $B$ or both. In other words, $A \cup B = \{x:x \in A \text{ or } x \in B\}$. 
+\item \textbf{Union:} The union of two sets $A$ and $B$, denoted $A \cup B$, is the set containing all elements that are in either $A$ or $B$ or both. In other words, $A \cup B = \{x:x \in A \text{ or } x \in B\}$.
 
     \item \textbf{Intersection:} The intersection of two sets $A$ and $B$, denoted $A \cap B$, is the set containing all elements that are in both $A$ and $B$. In other words, $A \cap B = \{x:x \in A \text{ and } x \in B\}$.
 
-    \item \textbf{Difference:} The difference of two sets $A$ and $B$, denoted $A \setminus B$, is the set containing all elements that are in $A$ but not in $B$. In other words, $A \setminus B = \{x:x \in A \text{ and } x \notin B \}$. 
+    \item \textbf{Difference:} The difference of two sets $A$ and $B$, denoted $A \setminus B$, is the set containing all elements that are in $A$ but not in $B$. In other words, $A \setminus B = \{x:x \in A \text{ and } x \notin B \}$.
 
     \item \textbf{Complement:} The complement of a set $A$, denoted $A^c$ or $\overline{A}$, is the set containing all elements that are not in $A$. The complement operation requires a \textit{universal set} $U$ as a reference, which contains all the elements under consideration. In other words, $A^c = \{x:x \in U \text{ and } x \notin A\}$.
 
-    \item \textbf{Cartesian Product:} The Cartesian product of two sets $A$ and $B$, denoted $A \times B$, is the set of all ordered pairs $(a, b)$, where $a \in A$ and $b \in B$. In other words, $A \times B = \{(a,b):a \in A \text{ and } b \in B\}$. 
+    \item \textbf{Cartesian Product:} The Cartesian product of two sets $A$ and $B$, denoted $A \times B$, is the set of all ordered pairs $(a, b)$, where $a \in A$ and $b \in B$. In other words, $A \times B = \{(a,b):a \in A \text{ and } b \in B\}$.
 
 \end{itemize}
+
+\begin{example}
+Let $A = \{1, 2, 3, 4\}$ and $B = \{3, 4, 5\}$, with universal set $U = \{1, 2, 3, 4, 5, 6\}$. Then
+\[
+A \cup B = \{1,2,3,4,5\}, \quad A \cap B = \{3,4\}, \quad A \setminus B = \{1,2\}, \quad A^c = \{5,6\},
+\]
+and $A \times B = \{(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,3),(3,4),(3,5),(4,3),(4,4),(4,5)\}$. Also, $\{3,4\} \subseteq A$, and since $\{3,4\} \neq A$, in fact $\{3,4\} \subsetneq A$.
+\end{example}
 
 \subsection{Relations}
 
-A \textit{relation} is a set of ordered pairs of elements. More specifically, a relation $R$ on two sets $A$ and $B$ is a subset of their Cartesian product $A \times B$. We say that $a \in A$ is related to $b \in B$ by the relation $R$ if $(a, b) \in R$. We write this as $aRb$.
+\begin{definition}
+A \textit{relation} $R$ on two sets $A$ and $B$ is a subset of their Cartesian product $A \times B$. We say that $a \in A$ is related to $b \in B$ by the relation $R$ if $(a, b) \in R$, written $aRb$. A relation \textit{on} a set $A$ means a relation on $A$ and $A$, i.e., a subset of $A \times A$.
+\end{definition}
 
-Some common types of relations are:
+A relation $R$ on a set $A$ may satisfy any of the following properties:
 
-\begin{itemize} 
+\begin{itemize}
 
-\item \textbf{Equivalence Relation:} A relation $R$ on a set $A$ is an equivalence relation if it satisfies the following three properties: 
+    \item \textit{Reflexivity:} For all $a \in A$, $aRa$. In other words, every element is related to itself.
 
-\begin{enumerate} 
+    \item \textit{Symmetry:} For all $a, b \in A$, if $aRb$, then $bRa$. In other words, if $a$ is related to $b$, then $b$ is related to $a$.
 
-    \item \textit{Reflexivity:} For all $a \in A$, $aRa$. In other words, every element is related to itself. 
-    
-    \item \textit{Symmetry:} For all $a, b \in A$, if $aRb$, then $bRa$. In other words, if $a$ is related to $b$, then $b$ is related to $a$. 
-    
-    \item \textit{Transitivity:} For all $a, b, c \in A$, if $aRb$ and $bRc$, then $aRc$. In other words, if $a$ is related to $b$ and $b$ is related to $c$, then $a$ is related to $c$. 
-\end{enumerate}
+    \item \textit{Antisymmetry:} For all $a, b \in A$, if $aRb$ and $bRa$, then $a = b$.
 
+    \item \textit{Transitivity:} For all $a, b, c \in A$, if $aRb$ and $bRc$, then $aRc$. In other words, if $a$ is related to $b$ and $b$ is related to $c$, then $a$ is related to $c$.
 
-\item \textbf{Partial Order:} A relation $R$ on a set $A$ is a partial order if it satisfies the following three properties: 
-    \begin{enumerate} 
-        
-        \item \textit{Reflexivity:} For all $a \in A$, $aRa$. 
-        
-        \item \textit{Antisymmetry:} For all $a, b \in A$, if $aRb$ and $bRa$, then $a = b$. In other words, if $a$ is related to $b$ and $b$ is related to $a$, then $a$ and $b$ are equal. 
-        
-        \item \textit{Transitivity:} For all $a, b, c \in A$, if $aRb$ and $bRc$, then $aRc$. 
-        \end{enumerate} 
+\end{itemize}
 
-    \end{itemize}
+\begin{definition}
+A relation $R$ on a set $A$ is an \textit{equivalence relation} if it is reflexive, symmetric, and transitive. A relation $R$ on a set $A$ is a \textit{partial order} if it is reflexive, antisymmetric, and transitive.
+\end{definition}
+
+\begin{example}
+Let $A = \{1, 2, 3, 4\}$ and $R = \{(1,1),(2,2),(3,3),(4,4),(1,2),(2,1),(3,4),(4,3)\}$. Then $R$ is reflexive (every $(a,a) \in R$), symmetric (each of $(1,2)$ and $(3,4)$ has its reverse in $R$), and transitive, so $R$ is an equivalence relation on $A$.
+
+By contrast, let $U$ be any set and let $R$ be the relation $\subseteq$ on the collection of subsets of $U$. This relation is reflexive ($X \subseteq X$), antisymmetric ($X \subseteq Y$ and $Y \subseteq X$ imply $X = Y$), and transitive, but not symmetric in general, so $\subseteq$ is a partial order rather than an equivalence relation.
+\end{example}
 
 \subsection{Functions}
 
-A \textit{function} is a special kind of relation between two sets $A$ and $B$. A function $f$ from a set $A$ to a set $B$, denoted $f : A \to B$, is a rule that assigns to each element $a \in A$ a unique element $b \in B$. We write $f(a) = b$ to indicate that the function $f$ maps the element $a$ to the element $b$. The set $A$ is called the \textit{domain} of the function, and the set $B$ is called the \textit{codomain}. The \textit{range} of the function is the set of all elements in $B$ that are the images of elements in $A$. In other words, the range of $f$ is the set ${f(a) : a \in A}$.
+\begin{definition}
+A \textit{function} $f$ from a set $A$ to a set $B$, denoted $f : A \to B$, is a relation on $A$ and $B$ that assigns to each element $a \in A$ exactly one element $b \in B$. We write $f(a) = b$ to indicate that the function $f$ maps the element $a$ to the element $b$. The set $A$ is called the \textit{domain} of the function, and the set $B$ is called the \textit{codomain}. The \textit{range} of the function is the set of all elements in $B$ that are the images of elements in $A$. In other words, the range of $f$ is the set $\{f(a) : a \in A\}$.
+\end{definition}
 
-A function can be can be categorised based on its properties:
+A function can be categorised based on the following properties:
 
+\begin{definition}
+Let $f : A \to B$.
 \begin{itemize}
-    \item A function $f : A \to B$ is called an \textit{injection} or \textit{one-to-one} if every element in $A$ is mapped to a distinct element in $B$. In other words, if $f(a_1) = f(a_2)$, then $a_1 = a_2$.
+    \item $f$ is called an \textit{injection} or \textit{one-to-one} if every element in $A$ is mapped to a distinct element in $B$. In other words, if $f(a_1) = f(a_2)$, then $a_1 = a_2$.
 
-    \item A function $f : A \to B$ is called a \textit{surjection} (or \textit{onto}) if every element in $B$ is the image of at least one element in $A$. In other words, for every $b \in B$, there exists an $a \in A$ such that $f(a) = b$.
+    \item $f$ is called a \textit{surjection} (or \textit{onto}) if every element in $B$ is the image of at least one element in $A$. In other words, for every $b \in B$, there exists an $a \in A$ such that $f(a) = b$.
 
-    \item A function $f : A \to B$ is called a \textit{bijection} or has a \textit{one-to-one correspondence} if it is both an injection and a surjection. In other words, $f$ is a bijection if every element in $A$ is mapped to a distinct element in $B$, and every element in $B$ is the image of at least one element in $A$. Bijections are important because they establish a strong correspondence between the elements of $A$ and $B$, indicating that the two sets have the same size or cardinality.
-% check this definition...
-
+    \item $f$ is called a \textit{bijection} or has a \textit{one-to-one correspondence} if it is both an injection and a surjection.
 \end{itemize}
+\end{definition}
+
+Bijections are important because they establish a strong correspondence between the elements of $A$ and $B$, indicating that the two sets have the same size or cardinality.
+
+\begin{example}
+Let $A = \{1, 2, 3\}$ and $B = \{4, 5, 6\}$, and define $f : A \to B$ by $f(1) = 4$, $f(2) = 5$, $f(3) = 6$. Then $f$ is a bijection: it is injective because its three outputs are distinct, and surjective because every element of $B$ is hit. By contrast, $g : \mathbb{Z} \to \mathbb{Z}$ given by $g(n) = n^2$ is neither injective ($g(1) = g(-1)$) nor surjective ($-1$ is never an output).
+\end{example}
 
 \subsection{Composition of Functions}
 
@@ -83,24 +100,30 @@ Given two functions $f : A \to B$ and $g : B \to C$, we can define a new functio
 
 In other words, to compute the value of the composition at $a \in A$, we first apply the function $f$ to $a$, then apply the function $g$ to the result.
 
+\begin{example}
+Let $f : \mathbb{Z} \to \mathbb{Z}$ be given by $f(n) = n + 1$, and let $g : \mathbb{Z} \to \mathbb{Z}$ be given by $g(n) = n^2$. Then $(g \circ f)(n) = g(f(n)) = (n+1)^2$, while $(f \circ g)(n) = f(g(n)) = n^2 + 1$. In particular, $(g \circ f)(1) = 4$ but $(f \circ g)(1) = 2$, so function composition is not commutative in general.
+\end{example}
+
 \subsection{Inverse Functions}
 
-A function $f : A \to B$ has an \textit{inverse} if there exists a function $g : B \to A$ such that both $g \circ f = \text{id}\_A$ and $f \circ g = \text{id}\_B$, where $\text{id}\_A$ and $\text{id}\_B$ are the identity functions on $A$ and $B$, respectively. The identity function on a set $X$, denoted $\text{id}\_X$, is defined as $\text{id}\_X(x) = x$ for all $x \in X$. If such a function $g$ exists, we denote it as $f^{-1}$ and call it the inverse of $f$.
-% fix this definition.
+\begin{definition}
+The \textit{identity function} on a set $X$, denoted $\text{id}_X$, is defined as $\text{id}_X(x) = x$ for all $x \in X$. A function $f : A \to B$ has an \textit{inverse} if there exists a function $g : B \to A$ such that both $g \circ f = \text{id}_A$ and $f \circ g = \text{id}_B$. If such a function $g$ exists, it is unique, and we denote it as $f^{-1}$ and call it the inverse of $f$.
+\end{definition}
 
-It is important to note that not all functions have inverses. For a function to have an inverse, it must be a bijection. In other words, the function must be both an injection and a surjection. If a function is a bijection, its inverse is unique.
+It is important to note that not all functions have inverses. For a function to have an inverse, it must be a bijection. In other words, the function must be both an injection and a surjection.
 
-This concludes the first section of Chapter 1 on basic set operations, relations, and functions. In the next section, we will explore Cartesian products and equivalence relations, which are essential tools for understanding more advanced concepts in abstract algebra.
+\begin{example}
+Let $f : \mathbb{Z} \to \mathbb{Z}$ be given by $f(n) = n + 1$. Then $f$ is a bijection, with inverse $f^{-1}(n) = n - 1$: for all $n \in \mathbb{Z}$, $f^{-1}(f(n)) = (n+1) - 1 = n$ and $f(f^{-1}(n)) = (n - 1) + 1 = n$.
+\end{example}
+
+This concludes the first section of Chapter 1 on basic set operations, relations, and functions. In the next section, we will look more closely at Cartesian products and see how an equivalence relation partitions a set into equivalence classes -- the same idea that, in Chapter 2, produces the cosets used to build quotient groups.
 
 
 \section{Cartesian Products and Equivalence Relations}
 
 \subsection{Cartesian Products}
 
-The Cartesian product of two sets $A$ and $B$, denoted as $A \times B$, is the set of all ordered pairs $(a, b)$, where $a \in A$ and $b \in B$. More formally,
-\[
-A \times B = \{(a, b) \mid a \in A, b \in B\}.
-\]
+Recall from Section 1.1 that the Cartesian product of two sets $A$ and $B$ is $A \times B = \{(a,b) : a \in A \text{ and } b \in B\}$.
 
 \begin{example}
 
@@ -112,19 +135,11 @@ A \times B = \{(1, a), (1, b), (2, a), (2, b)\}.
 
 \end{example}
 
-The Cartesian product can be generalized to more than two sets. Given $n$ sets, the Cartesian product is the set of all ordered $n$-tuples.
+The Cartesian product can be generalized to more than two sets. Given $n$ sets $A_1, \dots, A_n$, their Cartesian product $A_1 \times \cdots \times A_n$ is the set of all ordered $n$-tuples $(a_1, \dots, a_n)$ with $a_i \in A_i$ for each $i$. When the sets involved are themselves Cartesian products, we identify $(A \times B) \times C$ with $A \times B \times C$ by writing the nested pair $((a,b),c)$ simply as the triple $(a,b,c)$, and similarly for products of more than three sets.
 
-\subsection{Relations}
-A relation $R$ on a set $A$ is a subset of $A \times A$. If $(a, b) \in R$, we write $aRb$ or $a \sim b$. A relation can have the following properties:
+\subsection{Equivalence Classes and Partitions}
 
-\begin{itemize}
-\item \textbf{Reflexive}: A relation $R$ is reflexive if for all $a \in A$, $aRa$. In other words, $(a, a) \in R$.
-\item \textbf{Symmetric}: A relation $R$ is symmetric if for all $a, b \in A$, $aRb$ implies $bRa$. In other words, if $(a, b) \in R$, then $(b, a) \in R$.
-\item \textbf{Transitive}: A relation $R$ is transitive if for all $a, b, c \in A$, $aRb$ and $bRc$ imply $aRc$. In other words, if $(a, b) \in R$ and $(b, c) \in R$, then $(a, c) \in R$.
-\end{itemize}
-
-\subsection{Equivalence Relations}
-An equivalence relation is a relation that is reflexive, symmetric, and transitive. If a relation $\sim$ is an equivalence relation on a set $A$, then we can partition $A$ into disjoint subsets called equivalence classes.
+Recall from Section 1.2 that a relation $\sim$ on a set $A$ is an equivalence relation if it is reflexive, symmetric, and transitive.
 
 \begin{definition}
 Given an equivalence relation $\sim$ on a set $A$, the equivalence class of an element $a \in A$ is the set of all elements in $A$ that are related to $a$. It is denoted by $[a]$:
@@ -135,22 +150,21 @@ Given an equivalence relation $\sim$ on a set $A$, the equivalence class of an e
 \end{definition}
 
 \begin{theorem}
-If $\sim$ is an equivalence relation on a set $A$, then the equivalence classes partition $A$ into disjoint subsets.
+If $\sim$ is an equivalence relation on a set $A$, then the equivalence classes partition $A$ into disjoint subsets whose union is $A$.
 \end{theorem}
 
 \begin{proof}
-Let $A$ be a set with an equivalence relation $\sim$, and let $a, b \in A$. There are two cases to consider for the intersection of the equivalence classes $[a]$ and $[b]$:
-
+Let $A$ be a set with an equivalence relation $\sim$. By reflexivity, $a \in [a]$ for every $a \in A$, so the equivalence classes cover $A$. It remains to show that any two equivalence classes are either equal or disjoint. Let $a, b \in A$; there are two cases to consider.
 
 \begin{enumerate}
 
-\item If $a \sim b$, then for any $x \in [a]$, we have $x \sim a \sim b$. Since $\sim$ is symmetric, $b \sim a$, and by transitivity, $x \sim b$. Therefore, $x \in [b]$, and $[a] \subseteq [b]$. Similarly, we can show that $[b] \subseteq [a]$, and thus, $[a] = [b]$.
+\item If $a \sim b$, then for any $x \in [a]$, we have $x \sim a$, and since $a \sim b$, transitivity gives $x \sim b$. Therefore, $x \in [b]$, and $[a] \subseteq [b]$. Symmetrically, $[b] \subseteq [a]$, and thus $[a] = [b]$.
 
-\item If $a \not\sim b$, then $[a] \cap [b] = \emptyset$. Suppose there exists an element $x \in [a] \cap [b]$. Then $x \sim a$ and $x \sim b$. By symmetry, $b \sim x$, and by transitivity, $a \sim b$. This contradicts our assumption that $a \not \sim b$. Therefore, the intersection must be empty.
+\item If $a \not\sim b$, suppose toward a contradiction that there exists an element $x \in [a] \cap [b]$. Then $x \sim a$ and $x \sim b$. By symmetry, $a \sim x$, and by transitivity with $x \sim b$, we get $a \sim b$. This contradicts our assumption that $a \not \sim b$. Therefore, the intersection must be empty.
 
 \end{enumerate}
 
-In both cases, the equivalence classes are either equal or disjoint, which implies that the equivalence classes partition $A$.
+In both cases, the equivalence classes are either equal or disjoint. Together with the fact that they cover $A$, this shows that the equivalence classes partition $A$.
 \end{proof}
 
 \begin{example}
@@ -165,5 +179,5 @@ Let $A = \mathbb{Z}$, and define an equivalence relation $\sim$ on $\mathbb{Z}$ 
 These equivalence classes partition $\mathbb{Z}$ into disjoint subsets.
 \end{example}
 
-
+Equivalence classes and partitions are not just a set-theoretic curiosity. In Chapter 2, the left cosets $gH$ of a subgroup $H$ of a group $G$ partition $G$ into disjoint subsets, and the elements of a quotient group $G/N$ are exactly the cosets (equivalence classes) of a normal subgroup $N$ in $G$. Defining an operation on such classes, such as $(g_1N)(g_2N) = (g_1g_2)N$, always requires checking that the result does not depend on which representative of each class is chosen -- a property called being \textit{well-defined}.
 

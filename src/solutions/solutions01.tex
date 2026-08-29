@@ -11,7 +11,7 @@ To show that $R$ is an equivalence relation on $A \times B$, we need to prove th
 \item \textbf{Transitive}: For all $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in A \times B$, if $(a_1, b_1)R(a_2, b_2)$ and $(a_2, b_2)R(a_3, b_3)$, then $b_1 = b_2$ and $b_2 = b_3$. Therefore, $b_1 = b_3$, and $(a_1, b_1)R(a_3, b_3)$.
 \end{itemize}
 
-Thus, $R$ is an equivalence relation on $A \times B$. The equivalence classes are $\{(a, 1) \mid a \in A\}$ and $\{(a, 2) \mid a \in A\}$.
+Thus, $R$ is an equivalence relation on $A \times B$. The equivalence classes are $\{(x, 1) \mid x \in A\}$ and $\{(x, 2) \mid x \in A\}$.
 
 \item
 To show that $R$ is an equivalence relation on $A$, we need to prove that it is reflexive, symmetric, and transitive.
@@ -22,16 +22,12 @@ To show that $R$ is an equivalence relation on $A$, we need to prove that it is 
 \item \textbf{Transitive}: For all $a, b, c \in A$, if $aRb$ and $bRc$, then $a^3 \equiv b^3 \pmod{7}$ and $b^3 \equiv c^3 \pmod{7}$. By transitivity, $a^3 \equiv c^3 \pmod{7}$, so $aRc$.
 \end{itemize}
 
-Thus, $R$ is an equivalence relation on $A$. The equivalence classes of $R$ are the sets of integers whose cubes have the same remainder when divided by 7, which are:
+Thus, $R$ is an equivalence relation on $A$. The equivalence classes of $R$ are the sets of integers whose cubes have the same remainder when divided by 7. Since $n^3 \bmod 7$ takes only the values $0$, $1$, and $6$ (namely $0^3 \equiv 0$, $1^3 \equiv 1$, $2^3 \equiv 1$, $3^3 \equiv 6$, $4^3 \equiv 1$, $5^3 \equiv 6$, and $6^3 \equiv 6 \pmod 7$), $R$ has exactly three equivalence classes, each a union of ordinary residue classes mod 7:
 
 \begin{align*}
-[0] &= \{\dots, -14, -7, 0, 7, 14, \dots\}, \\
-[1] &= \{\dots, -13, -6, 1, 8, 15, \dots\}, \\
-[2] &= \{\dots, -12, -5, 2, 9, 16, \dots\}, \\
-[3] &= \{\dots, -11, -4, 3, 10, 17, \dots\}, \\
-[4] &= \{\dots, -10, -3, 4, 11, 18, \dots\}, \\
-[5] &= \{\dots, -9, -2, 5, 12, 19, \dots\}, \\
-[6] &= \{\dots, -8, -1, 6, 13, 20, \dots\}.
+[0] &= \{n \in \mathbb{Z} \mid n \equiv 0 \pmod 7\} = \{\dots, -7, 0, 7, 14, \dots\}, \\
+[1] &= \{n \in \mathbb{Z} \mid n \equiv 1, 2, \text{ or } 4 \pmod 7\} = \{\dots, -6, -5, -3, 1, 2, 4, 8, 9, 11, \dots\}, \\
+[3] &= \{n \in \mathbb{Z} \mid n \equiv 3, 5, \text{ or } 6 \pmod 7\} = \{\dots, -4, -2, -1, 3, 5, 6, 10, 12, 13, \dots\}.
 \end{align*}
 
 \item
