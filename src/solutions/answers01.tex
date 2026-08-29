@@ -20,7 +20,7 @@ Determine whether the following relations on the set $\mathbb{Z}$ are reflexive,
 \end{enumerate}
 
 \item
-The relation $R$ is reflexive because $(a, a) \in R$ for all $a \in A$. It is symmetric because whenever $(a, b) \in R$, we also have $(b, a) \in R$. However, it is not transitive because $(1, 2) \in R$ and $(2, 2) \in R$, but $(1, 2) \notin R$. Thus, $R$ is not an equivalence relation.
+The relation $R$ is reflexive because $(a, a) \in R$ for all $a \in A$. It is symmetric because whenever $(a, b) \in R$, we also have $(b, a) \in R$. It is also transitive: the only nontrivial compositions are $(1,2)$ with $(2,1)$, which requires $(1,1) \in R$ (true), and $(3,4)$ with $(4,3)$, which requires $(3,3) \in R$ (true). Thus, $R$ is an equivalence relation, with equivalence classes $[1] = [2] = \{1, 2\}$ and $[3] = [4] = \{3, 4\}$.
 
 \item
 First, we prove that $R$ is reflexive. For any integer $a$, $a - a = 0$, which is even. Thus, $aRa$ for all $a \in \mathbb{Z}$, and $R$ is reflexive.
